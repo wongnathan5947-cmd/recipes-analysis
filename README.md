@@ -50,6 +50,7 @@ Finally, to address the presence of extreme outliers in numerical columns such a
 
 The first few rows of the cleaned dataframe are shown below.
 
+```text
 | name                                 |     id |   minutes | tags                              | nutrition                                     |   n_steps | ingredients                       |   n_ingredients |   rating |   avg rating |   calories |   total fat |   sugar |   sodium |   protein |   saturated fat |   carbohydrates |
 |:-------------------------------------|-------:|----------:|:----------------------------------|:----------------------------------------------|----------:|:----------------------------------|----------------:|---------:|-------------:|-----------:|------------:|--------:|---------:|----------:|----------------:|----------------:|
 | 1 brownies in the world    best ever | 333281 |        40 | ['60-minutes-or-less', 'time-t... ]| [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]      |        10 | ['bittersweet chocolate', 'uns... ]|               9 |        4 |            4 |      138.4 |          10 |      50 |        3 |         3 |              19 |               6 |
@@ -57,6 +58,7 @@ The first few rows of the cleaned dataframe are shown below.
 | 412 broccoli casserole               | 306168 |        40 | ['60-minutes-or-less', 'time-t... ]| [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]     |         6 | ['frozen broccoli cuts', 'crea... ]|               9 |        5 |            5 |      194.8 |          20 |       6 |       32 |        22 |              36 |               3 |
 | millionaire pound cake               | 286009 |       120 | ['time-to-make', 'course', 'cu... ]| [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0] |         7 | ['butter', 'sugar', 'eggs', 'a... ]|               7 |        5 |            5 |      878.3 |          63 |     326 |       13 |        20 |             123 |              39 |
 | 2000 meatloaf                        | 475785 |        90 | ['time-to-make', 'course', 'ma... ]| [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]    |        17 | ['meatloaf mixture', 'unsmoked... ]|              13 |        5 |            5 |      267   |          30 |      12 |       12 |        29 |              48 |               2 |
+```
 ## Hypothesis Testing
 
 ## Framing a Prediction Problem
