@@ -58,6 +58,49 @@ The first few rows of the cleaned dataframe are shown below.
 | millionaire pound cake               | 286009 |       120 | ['time-to-make', 'course', 'cu... ]| [878.3, 63.0, 326.0, 13.0, 20.0, 123.0, 39.0] |         7 | ['butter', 'sugar', 'eggs', 'a... ]|               7 |        5 |            5 |      878.3 |          63 |     326 |       13 |        20 |             123 |              39 |
 | 2000 meatloaf                        | 475785 |        90 | ['time-to-make', 'course', 'ma... ]| [267.0, 30.0, 12.0, 12.0, 29.0, 48.0, 2.0]    |        17 | ['meatloaf mixture', 'unsmoked... ]|              13 |        5 |            5 |      267   |          30 |      12 |       12 |        29 |              48 |               2 |
 
+## Exploratory Data Analysis
+### Univariate Analysis
+We graphed the distribution of cooking times among all recipes. 
+<iframe src="assets/plots/Distribution_of_Recipe_Cooking_Times.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
+
+We found that the average cooking time centered around roughly 30 - 34 minutes. The histogram is nearly normal and slightly right-skewed, meaning longer cooking times were less frequent. The variance within the graph suggests that the cooking time data behaves well, and centers itself around a general range
+
+We then plotted the distribution of the number of ingredients within a recipe.
+
+<iframe src="assets/plots/Frequency of Ingredient Counts per Recipe.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
+
+We found that the distribution of the number of ingredients also takes on a normal shape, with the average amount of ingredients being 8-9. The histogram takes on a tighter shape, suggesting the uncommon nature of using fewer/more ingredients.
+
+### Bivariate Analysis
+We performed bivariate analysis on the number of steps vs. cooking time.  
+
+<iframe src="assets/plots/Relationship between Number of Steps and Cooking Time.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
+
+The plot shows a general, positive trend between the number of steps vs. cooking time. The scatterplot suggests that as the number of steps increases, cooking time increases. This relationship makes sense because, on average, increasing the number of steps would naturally result in a greater amount of time taken.
+
+### Interesting Aggregates
+
+By defining recipe complexity by binning each by the number of steps (ex. [0, 5, 10, 15, 100]), we can see an interesting trend between complexity and calories.
+<iframe src="assets/plots/Average Rating by Recipe Complexity.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
+
+## Assessment of Missingness
+
 ## Hypothesis Testing
 
 ## Framing a Prediction Problem
@@ -67,4 +110,3 @@ The first few rows of the cleaned dataframe are shown below.
 ## Final Model
 
 ## Fairness Analysis
-
