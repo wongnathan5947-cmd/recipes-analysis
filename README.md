@@ -101,7 +101,29 @@ By defining recipe complexity by binning each by the number of steps (ex. [0, 5,
 
 After grouping by recipe complexity, we can see that the more complex a recipe is, the greater its average calorie count is. 
 ## Assessment of Missingness
+### NMAR Analysis
+We believe the rating column in our dataset is likely NMAR — that is, Not Missing At Random. The missingness in this column is plausibly dependent on the value of the rating itself, which is unobserved. Specifically, users who have a neutral or mildly negative experience with a recipe may be less motivated to leave a rating than users who feel strongly, either positively or negatively. This means the absence of a rating is systematically related to the rating's value: middling recipes are disproportionately likely to go unrated, making the missingness non-random and dependent on the unobserved data itself.
 
+To potentially make this missingness MAR, we would want to obtain additional data about user behavior on food.com — for example, the number of times a recipe page was visited versus the number of ratings submitted, or whether users who viewed a recipe went on to make it. If the probability of a missing rating could be explained by an observable variable such as page traffic or recipe popularity, the missingness would then be attributable to those observed factors rather than the rating value itself, satisfying the conditions for MAR.
+
+### Missingness Dependency
+To explore the missingness of avg_rating, we conducted permutation tests to determine whether its missingness depends on other columns in the dataset. Of the columns tested, we selected n_steps and name_length to present in detail — one representing a column we believed the missingness of avg_rating would depend on, and one representing a column we believed it would not.
+
+First, we perform the permutation test on n_steps and rating_na, and the missingness of n_steps does depend on rating_na.
+
+**Null Hypothesis**: The distribution of n_steps when rating is missing is the same as the distribution of n_steps when rating is not missing — i.e., the missingness of avg_rating does not depend on n_steps.
+
+**Alternative Hypothesis** : The distribution of n_steps when rating is missing is different from the distribution of n_steps when rating is not missing — i.e., the missingness of avg_rating does depend on n_steps.
+
+After performing the permutation test, the observed absolute mean difference in n_steps was 0.63, and the p-value was 0.0. The plot above shows the empirical null distribution of the test statistic across 500 permutations, with the observed statistic marked by the dashed red line. The observed value falls entirely outside the null distribution.
+
+Since the p-value of 0.0 is less than our significance level of 0.05, we reject the null hypothesis. The missingness of avg_rating is dependent on n_steps, suggesting that recipes with missing ratings tend to systematically differ in their number of steps from recipes that have ratings.
+
+<iframe src="assets/plots/perm_n_steps.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
 ## Hypothesis Testing
 
 ## Framing a Prediction Problem
