@@ -141,7 +141,23 @@ Since the p-value of 0.344 is greater than our significance level of 0.05, we fa
         frameborder="0">
 </iframe>
 ## Hypothesis Testing
+In this hypothesis test, we aim to assess whether the proportion of perfect ratings (an avg_rating of 5.0) differs between high-calorie and low-calorie recipes. 
 
+**Null Hypothesis**: The proportion of perfect ratings is the same between high-calorie and low-calorie recipes.
+
+**Alternative Hypothesis**: The proportion of perfect ratings is different between high-calorie and low-calorie recipes.
+
+**Test Statistic**: Absolute difference in the proportion of perfect ratings between high-calorie and low-calorie groups. We use a proportion-based statistic here because perfect_rating is a binary variable, making the difference in proportions a natural and interpretable measure of association.
+
+**Significance Level**: 0.05
+<iframe src="assets/plots/Absolute Difference in Perfect Rating Proportions.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
+The plot above shows the empirical null distribution of the test statistic across 500 permutations, with the observed difference of 0.0003 marked by the dashed red line. The observed value falls near the leftmost edge of the null distribution, well within the range of values expected under the null.
+
+Based on the permutation test, the observed absolute difference was 0.0003 and the resulting p-value was 0.916. Since this is far greater than our significance level of 0.05, we fail to reject the null hypothesis. This suggests that there is no statistically significant difference in the proportion of perfect ratings between high-calorie and low-calorie recipes, and that caloric content alone does not appear to be associated with whether a recipe receives a perfect rating.
 ## Framing a Prediction Problem
 
 We have established that a recipe's features, such as its number of steps, number of ingredients, and nutritional content, have some relationship with its cook time. This naturally leads to the following prediction problem: can we accurately predict how long a recipe takes to prepare based on its measurable features?
