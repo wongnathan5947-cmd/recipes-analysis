@@ -99,6 +99,7 @@ By defining recipe complexity by binning each by the number of steps (ex. [0, 5,
         frameborder="0">
 </iframe>
 
+After grouping by recipe complexity, we can see that the more complex a recipe is, the greater its average calorie count is. 
 ## Assessment of Missingness
 
 ## Hypothesis Testing
