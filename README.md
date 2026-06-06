@@ -134,3 +134,10 @@ We also plotted Train vs. Test R-squared for our final model
 </iframe>
 
 ## Fairness Analysis
+To assess whether our final model performs equitably across different recipe types, we conducted a permutation test comparing model error between high-calorie and low-calorie recipes. Group X was defined as high-calorie recipes, those with calorie counts above the mean, and Group Y as low-calorie recipes, those at or below the mean. The evaluation metric used was RMSE, and the test statistic was the absolute difference in RMSE between the two groups.
+
+The null hypothesis states that our model is fair: any observed difference in RMSE between high-calorie and low-calorie recipes is due to random chance alone. The alternative hypothesis states that our model is unfair: the RMSE for high-calorie recipes is significantly different from that for low-calorie recipes. We used a significance level of 0.05.
+
+A permutation test was conducted over 500 iterations, randomly shuffling the calorie group labels each time and recomputing the RMSE difference to construct an empirical null distribution. The observed RMSE difference was 0.5938 minutes, and the resulting p-value was 0.0, meaning that none of the 500 permuted differences met or exceeded the observed value. The histogram above illustrates this clearly, with the observed difference falling well outside the bulk of the null distribution.
+
+At a significance level of 0.05, we reject the null hypothesis. The evidence suggests that our model does not perform equally across high-calorie and low-calorie recipes, indicating a potential fairness concern. This is not entirely surprising, as calories was used as a feature in training, which may have introduced a systematic bias in how the model handles recipes at different ends of the caloric spectrum.
