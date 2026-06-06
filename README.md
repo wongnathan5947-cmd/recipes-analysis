@@ -1,13 +1,11 @@
 # Recipe Cook Time Analysis
-
 DSC80 Final Project
+
+This project captures various steps of analysis, starting from exploratory data analysis to hypothesis testing, creation of baseline models, and concluding with fairness analysis. The primary focus of this project involves the impact of different features of a recipe, such as ingredients, steps, nutritional value, and its effect on recipe cook time.
 
 Authors: David Oh, Nathan Wong
 
 ## Introduction
-
-This project captures various steps of analysis, starting from exploratory data analysis to hypothesis testing, creation of baseline models, and concluding with fairness analysis. The primary focus of this project involves the impact of different features of a recipe, such as ingredients, steps, nutritional value, and its effect on recipe cook time.
-
 ### General Introduction 
 Every step of this project was conducted on a dataset accessed from food.com, a website containing various recipes with their respective ratings, ingredients, and directions.
 
