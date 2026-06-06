@@ -126,4 +126,11 @@ Two new features were introduced in this model. The first is time_category, deri
 
 Hyperparameter tuning was performed via 5-fold cross-validated grid search over max_depth values of [2, 5, 10, 12, 15, 22, 28] and min_samples_split values of [2, 3, 4, 6], optimizing for R². The best performing configuration used a max_depth of 28 and min_samples_split of 2. The final model achieved a Train RMSE of 1.91 minutes, a Test RMSE of 4.44 minutes, a Train R² of 0.9928, and a Test R² of 0.9617. This represents a dramatic improvement over the baseline model's Test RMSE of 20.62 minutes and R² of 0.1750, suggesting that the addition of time_category and calories, combined with a model capable of capturing non-linear structure, substantially increased predictive power. The small gap between train and test performance indicates the model generalizes well, though the high train R² does suggest mild overfitting that could be addressed with further regularization.
 
+We also plotted Train vs. Test R-squared for our final model
+<iframe src="assets/plots/Train vs. Test R-squared by Max Depth.html" 
+        width="800" 
+        height="500" 
+        frameborder="0">
+</iframe>
+
 ## Fairness Analysis
