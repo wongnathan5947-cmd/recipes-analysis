@@ -93,7 +93,7 @@ The plot shows a general, positive trend between the number of steps vs. cooking
 ### Interesting Aggregates
 
 By defining recipe complexity by binning each by the number of steps (ex. [0, 5, 10, 15, 100]), we can see an interesting trend between complexity and calories.
-<iframe src="assets/plots/Average Rating by Recipe Complexity.html" 
+<iframe src="assets/plots/Average Cooking Time and Calories by Recipe Complexity.html" 
         width="800" 
         height="500" 
         frameborder="0">
