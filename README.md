@@ -110,7 +110,7 @@ We have established that a recipe's features, such as its number of steps, numbe
 
 Since minutes is a continuous numerical variable, this is a regression problem. We chose minutes as our response variable because cook time is the most direct and practical measure of a recipe's feasibility, particularly for individuals with limited time. At the time of prediction, we would realistically have access to all features used — n_steps, n_ingredients, calories, and time_category — as these are all properties of the recipe itself, determined before any user interaction such as reviews or ratings occurs. No post-hoc information is used.
 
-To evaluate model performance, we use both RMSE and R². RMSE is preferred as a primary metric because it expresses error in the same units as the response variable (minutes), making it interpretable in practical terms. R² is reported alongside it to convey how much of the variance in cook time the model explains. We opt for RMSE over MAE because it penalizes larger errors more heavily, which is desirable here — a prediction that is off by 60 minutes is disproportionately more problematic than one off by 5 minutes, and RMSE reflects that asymmetry.
+To evaluate model performance, we use both RMSE and R². RMSE is preferred as a primary metric because it expresses error in the same units as the response variable (minutes), making it interpretable in practical terms. R² is reported alongside it to convey how much of the variance in cook time the model explains. We opt for RMSE over MAE because it penalizes larger errors more heavily, which is desirable here. A prediction that is off by 60 minutes is disproportionately more problematic than one off by 5 minutes, and RMSE reflects that asymmetry.
 
 ## Baseline Model
 
